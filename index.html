@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Love Letter for Ratna</title>
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  h1, h2, h3, p {
+    color: #f0f0f0;
+  }
+
+  img {
+    max-width: 90%;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  a {
+    color: #ff6ec7;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .heart {
+    background: #ff4d6d;
+  }
+
+  .heart::before,
+  .heart::after {
+    background: #ff4d6d;
+  }
+</style>
+<style>
+  .heart {
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: -10px;
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 5s linear infinite;
+    z-index: 9999;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .heart::before {
+    top: -7.5px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: -7.5px;
+    top: 0;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+<style>
+  .glitch {
+    position: relative;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: white;
+    background: #0d0d0d;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  .glitch::before {
+    left: -2px;
+    text-shadow: 2px 0 red;
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: 2px;
+    text-shadow: -2px 0 blue;
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim-1 {
+    0% { clip: rect(42px, 9999px, 44px, 0); }
+    5% { clip: rect(12px, 9999px, 14px, 0); }
+    10% { clip: rect(85px, 9999px, 86px, 0); }
+    15% { clip: rect(55px, 9999px, 58px, 0); }
+    20% { clip: rect(90px, 9999px, 92px, 0); }
+    100% { clip: rect(20px, 9999px, 22px, 0); }
+  }
+
+  @keyframes glitch-anim-2 {
+    0% { clip: rect(82px, 9999px, 84px, 0); }
+    5% { clip: rect(32px, 9999px, 34px, 0); }
+    10% { clip: rect(25px, 9999px, 28px, 0); }
+    15% { clip: rect(65px, 9999px, 68px, 0); }
+    20% { clip: rect(30px, 9999px, 32px, 0); }
+    100% { clip: rect(40px, 9999px, 42px, 0); }
+  }
+
+  @keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    10% { transform: skew(5deg); }
+    20% { transform: skew(-5deg); }
+    30% { transform: skew(3deg); }
+    40% { transform: skew(-3deg); }
+    50% { transform: skew(2deg); }
+    60% { transform: skew(-2deg); }
+    70% { transform: skew(1deg); }
+    80% { transform: skew(-1deg); }
+    100% { transform: skew(0deg); }
+  }
+</style>
+</head>
+<body>
+<body>
+<div class="container">
+<h1 class="glitch" data-text="❤️ To: Ratna Duhita ❤️">❤️ To: Ratna Duhita ❤️</h1>
+<p class="typing" id="loveNote"></p>
+<div class="photo">
+<img alt="Us" src="loveletter_photo.jpg"/>
+</div>
+<audio autoplay="" controls="" loop="">
+<source src="show_me_love.mp3" type="audio/mpeg"/>
+            Your browser does not support the audio element.
+        </audio>
+<div class="countdown">
+            Anniversary: <span id="countdown"></span>
+</div>
+</div>
+<script>
+        const text = `Hai Ratna Duhita 🌹
+
+Selamat hari jadi kita yang ke-6 💞
+
+Aku nggak pandai berkata-kata, tapi yang pasti: kamu adalah salah satu hal terbaik yang pernah terjadi dalam hidupku.
+
+Terima kasih sudah hadir sejak 14 Januari 2019 dan terus jadi cahaya di hari-hariku.
+
+Lewat halaman kecil ini, aku cuma mau bilang:
+
+Aku sayang kamu. Sekarang, nanti, dan seterusnya. ❤️
+
+- Dari seseorang yang nggak pernah bosan mencintaimu`;
+
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("loveNote").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        typeWriter();
+
+        const targetDate = new Date("2019-01-14");
+        const now = new Date();
+        const diff = now - targetDate;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("countdown").innerText = days + " days together ❤️";
+    </script>
+<audio autoplay="" hidden="" loop="">
+<source src="show_me_love.mp3" type="audio/mpeg"/>
+  Your browser does not support the audio element.
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.querySelector('audio');
+    if (audio) {
+      const resumeAudio = () => {
+        audio.play().catch(() => {});
+        document.removeEventListener('click', resumeAudio);
+        document.removeEventListener('touchstart', resumeAudio);
+      };
+      document.addEventListener('click', resumeAudio);
+      document.addEventListener('touchstart', resumeAudio);
+    }
+  });
+</script>
+</body>
+<audio autoplay="" hidden="" loop="">
+<source src="show_me_love.mp3" type="audio/mpeg"/>
+  Your browser does not support the audio element.
+</audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.querySelector('audio');
+    if (audio) {
+      const resumeAudio = () => {
+        audio.play().catch(() => {});
+        document.removeEventListener('click', resumeAudio);
+        document.removeEventListener('touchstart', resumeAudio);
+      };
+      document.addEventListener('click', resumeAudio);
+      document.addEventListener('touchstart', resumeAudio);
+    }
+  });
+</script>
+</body>
+</html>
